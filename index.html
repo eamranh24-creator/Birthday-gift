@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Birthday MY Jann 🎂</title>
+
+<style>
+body{
+    margin:0;
+    padding:0;
+    font-family: Arial, sans-serif;
+    text-align:center;
+    background: linear-gradient(135deg,#ff9ecb,#ffc1e3);
+    color:white;
+    overflow-x:hidden;
+}
+
+.container{
+    padding:20px;
+    margin-top:40px;
+}
+
+h1{
+    font-size:28px;
+}
+
+.cake{
+    font-size:60px;
+    margin:15px 0;
+}
+
+.timeline{
+    background:rgba(255,255,255,0.25);
+    padding:12px;
+    border-radius:15px;
+    font-size:15px;
+    margin:10px 0;
+}
+
+#letter{
+    margin-top:20px;
+    font-size:16px;
+    line-height:1.6;
+    min-height:120px;
+}
+
+button{
+    margin-top:20px;
+    padding:12px 25px;
+    border:none;
+    border-radius:25px;
+    font-size:15px;
+    background:white;
+    color:#ff4da6;
+    cursor:pointer;
+}
+
+.signature{
+    margin-top:40px;
+    font-style:italic;
+    font-size:15px;
+}
+
+/* Rose petals */
+.petal{
+    position:fixed;
+    top:-10px;
+    font-size:18px;
+    animation:fall linear infinite;
+}
+
+@keyframes fall{
+    0%{transform:translateY(-10vh) rotate(0deg);}
+    100%{transform:translateY(110vh) rotate(360deg);}
+}
+
+/* Hidden YouTube */
+#musicFrame{
+    display:none;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>Happy Birthday MY Jann 👑💗</h1>
+
+<div class="cake">🎂🕯️🕯️</div>
+
+<div class="timeline">
+🌸 28 February 2007 — My Princess was born <br>
+💖 28 February 2026 — 19 Years of Beauty
+</div>
+
+<div id="letter"></div>
+
+<button onclick="startSurprise()">Tap Here Princess 💕</button>
+
+<div class="signature">
+Forever Yours,<br>
+Blue Prince 💙
+</div>
+
+</div>
+
+<!-- Indila - Love Story -->
+<iframe id="musicFrame"
+src="https://www.youtube.com/embed/DF3XjEhJ40Y?autoplay=1&loop=1&playlist=DF3XjEhJ40Y"
+allow="autoplay">
+</iframe>
+
+<script>
+
+const text = "MY Jann, from the moment you were born on 28 February 2007, the world became more beautiful. Today, 28 February 2026, you turn 19 — and you are still the most precious blessing in my life. You are my Princess, my peace, and my forever happiness. I promise to stand beside you in every dream and every storm. I love you endlessly.";
+
+let i=0;
+
+function typeWriter(){
+    if(i<text.length){
+        document.getElementById("letter").innerHTML += text.charAt(i);
+        i++;
+        setTimeout(typeWriter,40);
+    }
+}
+
+function startSurprise(){
+    document.getElementById("musicFrame").style.display="block";
+    typeWriter();
+}
+
+/* Rose petals */
+setInterval(()=>{
+    const petal=document.createElement("div");
+    petal.classList.add("petal");
+    petal.innerHTML="🌹";
+    petal.style.left=Math.random()*100+"vw";
+    petal.style.animationDuration=(Math.random()*5+5)+"s";
+    document.body.appendChild(petal);
+    setTimeout(()=>{petal.remove();},10000);
+},400);
+
+</script>
+
+</body>
+</html>
